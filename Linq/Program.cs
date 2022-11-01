@@ -10,61 +10,41 @@ namespace Linq.Classes
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-
             Console.Clear();
 
             string fileName = "data.json";
             string jsonString = File.ReadAllText(fileName);
             JObject hoodFile = JObject.Parse(jsonString);
-            // Console.WriteLine(hoodFile.ToString());
 
             IList<JToken> listResults = hoodFile["features"].Children().ToList();
 
             IList<Features> searchResults = new List<Features>();
 
+            List<string?> fullResult = new List<string?>();
+
             foreach (JToken result in listResults)
             {
                 Features searchResult = result.ToObject<Features>();
-                searchResults.Add(searchResult);
+                fullResult.Add(searchResult.Properties.Neighborhood);
 
-                var fullResult = searchResult.Properties.Neighborhood;
+            }//foreach jTOKEN
 
-
-                foreach (var i in fullResult)
+            //no duplicates, no missing neighboorhoods
+            IEnumerable<string> neighborhoods = fullResult.Distinct();
+            int count = 0;
+            foreach (var neighborhood in neighborhoods)
+            {
+                if (neighborhood == "")
                 {
-                    if (fullResult == "")
-                    {
-                        // fullResult.Remove(i);
-                        // fullResult.Skip(i);
-                    }
+                    continue;
                 }
-
-                var newList = fullResult.Distinct();
-                Console.WriteLine(newList);
-                
-                //Spits out all neighborhoods in data.json
-                // Console.WriteLine(fullResult);
-
-
-                // var query = from hood in endResult where endResult == ""
-                //         select hood;
-                // foreach(var item in query){
-                //     Console.WriteLine($"doesn't exist.");
-                // }
-
+                count++;
+                Console.WriteLine($"{count}: {neighborhood}");
             }
 
-
-
-        }
-
-
-
-
+        }//main
     }//class Program
 }//namespace Linq.Classes
 
