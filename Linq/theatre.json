@@ -1,0 +1,20 @@
+{
+  "show": "Hamilton",
+  "actors": ["David Biggs", "John Smith", "Lin Manuel Miranda"],
+  "director": "Quentin Tarantino",
+  "crew": [
+    {
+      "position": "Sound Board Operator",
+      "name": "John Doe"
+    },
+    {
+      "position": "Carpenter",
+      "name": "Jane Dow"
+    },
+    {
+      "position": "Costume Designer",
+      "name": "Josey Grossey"
+    }
+  ],
+  "venue": "Orpheum Theatre"
+}

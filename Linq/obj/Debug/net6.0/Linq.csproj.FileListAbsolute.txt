@@ -1,0 +1,17 @@
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Linq
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Linq.deps.json
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Linq.runtimeconfig.json
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Linq.dll
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Linq.pdb
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.csproj.AssemblyReference.cache
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.AssemblyInfoInputs.cache
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.AssemblyInfo.cs
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.csproj.CoreCompileInputs.cache
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.dll
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/refint/Linq.dll
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.pdb
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.genruntimeconfig.cache
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/ref/Linq.dll
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/Debug/net6.0/Linq.csproj.CopyComplete

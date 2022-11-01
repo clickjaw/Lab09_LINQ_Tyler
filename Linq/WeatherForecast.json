@@ -1,0 +1,19 @@
+{
+  "Date": "2022-10-31T00:00:00",
+  "TempFarenheit": 61,
+  "Summary": "Chill in the air.",
+  "TempRanges": {
+    "Cold": {
+      "High": 50,
+      "Low": 10
+    },
+    "Cool": {
+      "High": 69,
+      "Low": 51
+    },
+    "Hot": {
+      "High": 100,
+      "Low": 70
+    }
+  }
+}
