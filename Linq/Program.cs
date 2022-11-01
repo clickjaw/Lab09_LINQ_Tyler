@@ -22,27 +22,45 @@ namespace Linq.Classes
 
             IList<Features> searchResults = new List<Features>();
 
-            List<string?> fullResult = new List<string?>();
+            List<string?> hoodResult = new List<string?>();
+            List<string?> boroughResult = new List<string?>();
+            List<string?> cityResult = new List<string>();
+            List<string?> stateResult = new List<string?>();
+            List<string?> zipResult = new List<string>();
 
             foreach (JToken result in listResults)
             {
                 Features searchResult = result.ToObject<Features>();
-                fullResult.Add(searchResult.Properties.Neighborhood);
+                hoodResult.Add(searchResult.Properties.Neighborhood);
+                cityResult.Add(searchResult.Properties.City);
+                stateResult.Add(searchResult.Properties.State);
+                boroughResult.Add(searchResult.Properties.Borough);
+                zipResult.Add(searchResult.Properties.Zip);
+
 
             }//foreach jTOKEN
 
             //no duplicates, no missing neighboorhoods
-            IEnumerable<string> neighborhoods = fullResult.Distinct();
-            int count = 0;
+            IEnumerable<string> neighborhoods = hoodResult.Distinct();
+            IEnumerable<string> zips = zipResult.Distinct();
+            int hoodCount = 0;
+            int zipCount = 0;
+
             foreach (var neighborhood in neighborhoods)
             {
                 if (neighborhood == "")
                 {
                     continue;
                 }
-                count++;
-                Console.WriteLine($"{count}: {neighborhood}");
+                hoodCount++;
+                Console.WriteLine($"{hoodCount}: {neighborhood}");
             }
+
+            // foreach (var zip in zips)
+            // {
+            //     zipCount++;
+            //     Console.WriteLine($"{zipCount}: {zip}");
+            // }
 
         }//main
     }//class Program
