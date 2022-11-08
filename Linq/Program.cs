@@ -14,6 +14,16 @@ namespace Linq.Classes
         {
             Console.Clear();
 
+            //============ creating text files ===========================================
+            // string hoodPath = "../new-neighborhood-data.txt";
+
+            string newHoodPath = "../new-neighborhood-data.txt";
+
+            // fileCreateNewFile(newHoodPath, hoodResult);
+
+
+
+            //============================================================================
             string fileName = "data.json";
             string jsonString = File.ReadAllText(fileName);
             JObject hoodFile = JObject.Parse(jsonString);
@@ -23,38 +33,91 @@ namespace Linq.Classes
             IList<Features> searchResults = new List<Features>();
 
             List<string?> hoodResult = new List<string?>();
-            List<string?> boroughResult = new List<string?>();
-            List<string?> cityResult = new List<string>();
-            List<string?> stateResult = new List<string?>();
-            List<string?> zipResult = new List<string>();
+            // List<string?> boroughResult = new List<string?>();
+            // List<string?> cityResult = new List<string>();
+            // List<string?> stateResult = new List<string?>();
+            // List<string?> zipResult = new List<string>();
 
             foreach (JToken result in listResults)
             {
                 Features searchResult = result.ToObject<Features>();
                 hoodResult.Add(searchResult.Properties.Neighborhood);
-                cityResult.Add(searchResult.Properties.City);
-                stateResult.Add(searchResult.Properties.State);
-                boroughResult.Add(searchResult.Properties.Borough);
-                zipResult.Add(searchResult.Properties.Zip);
+                // cityResult.Add(searchResult.Properties.City);
+                // stateResult.Add(searchResult.Properties.State);
+                // boroughResult.Add(searchResult.Properties.Borough);
+                // zipResult.Add(searchResult.Properties.Zip);
 
 
             }//foreach jTOKEN
 
-            //no duplicates, no missing neighboorhoods
-            IEnumerable<string> neighborhoods = hoodResult.Distinct();
-            IEnumerable<string> zips = zipResult.Distinct();
-            int hoodCount = 0;
-            int zipCount = 0;
+            Console.WriteLine(hoodResult.Count);
 
-            foreach (var neighborhood in neighborhoods)
+            //no duplicates, no missing neighboorhoods
+            // IEnumerable<string> neighborhoods = hoodResult;
+            // IEnumerable<string> neighborhoods = hoodResult.Distinct(); //this is the one
+
+            // //Linq 
+            // IEnumerable<string> neighborhoods = (from result in hoodResult
+            //                                      select result).Distinct();
+
+            // // IEnumerable<string> zips = zipResult.Distinct();
+            // int hoodCount = 0; // this is the one
+
+            // foreach (var neighborhood in neighborhoods)
+            // {
+            //     if (neighborhood == "")
+            //     {
+            //         continue;
+            //     }
+            //     hoodCount++;
+            //     Console.WriteLine($"{hoodCount}: {neighborhood}");
+            // }
+
+
+            // string[] arrHoodResult = new string[hoodResult.Count];
+            
+            fileCreateNewFile(newHoodPath, hoodResult);
+
+            void fileCreateNewFile(string file, List<string> hoodResult)
             {
-                if (neighborhood == "")
+
+                IEnumerable<string> neighborhoods = hoodResult.Distinct();
+
+                int hoodCount = 0; // this is the one
+
+                try
                 {
-                    continue;
+                    using (StreamWriter sw = new StreamWriter(file))
+                    {
+                        try
+                        {
+                            foreach (var neighborhood in neighborhoods)
+                            {
+                                if (neighborhood == "")
+                                {
+                                    continue;
+                                }
+                                hoodCount++;
+                                sw.WriteLine($"{hoodCount}: {neighborhood}");
+                            }//foreach
+                        }//try
+                        catch (Exception e)
+                        {
+                            throw;
+                        }//catch
+                        finally
+                        {
+                            sw.Close();
+                        }
+                    }//using
+                }//try
+                catch (System.Exception)
+                {
+
+                    throw;
                 }
-                hoodCount++;
-                Console.WriteLine($"{hoodCount}: {neighborhood}");
-            }
+            }//fileCreateNewFile
+
 
             // foreach (var zip in zips)
             // {

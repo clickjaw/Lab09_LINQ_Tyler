@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/Linq.csproj",
+      "projectUniqueName": "/Users/tylermorgan/Code/Code401/Labs/Lab09_LINQ_Tyler/Linq/Linq.csproj",
       "projectName": "Linq",
-      "projectPath": "/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/Linq.csproj",
+      "projectPath": "/Users/tylermorgan/Code/Code401/Labs/Lab09_LINQ_Tyler/Linq/Linq.csproj",
       "packagesPath": "/Users/tylermorgan/.nuget/packages/",
-      "outputPath": "/Users/tylermorgan/code401/LABS/Lab09_LINQ_Tyler/Linq/obj/",
+      "outputPath": "/Users/tylermorgan/Code/Code401/Labs/Lab09_LINQ_Tyler/Linq/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tylermorgan/.nuget/NuGet/NuGet.Config"
